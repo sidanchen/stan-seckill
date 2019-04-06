@@ -24,6 +24,10 @@
 /nbdist/
 /.nb-gradle/
 
+LOG*/
+
+target/
+
 
 .mvn
 *.cmd
