@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -22,7 +25,7 @@ import java.io.IOException;
 @Configuration
 public class MybatisConfig {
 
-    private static Log logger = LogFactory.getLog(MybatisConfig.class);
+    private Log logger = LogFactory.getLog(MybatisConfig.class);
 
     @Autowired
     private DataSource dataSource;
@@ -35,10 +38,10 @@ public class MybatisConfig {
             SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
             sessionFactoryBean.setDataSource(dataSource);
             // 读取配置
-            sessionFactoryBean.setTypeAliasesPackage("com.stan.pojo");
+            sessionFactoryBean.setTypeAliasesPackage("com.stan.seckill.pojo");
 
             //设置mapper.xml文件所在位置
-            Resource[] resources = new PathMatchingResourcePatternResolver().getResources("com/stan/*/dao/*.xml");
+            Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath:/com/stan/*/dao/*.xml");
             sessionFactoryBean.setMapperLocations(resources);
             //设置mybatis-config.xml配置文件位置
             //sessionFactoryBean.setConfigLocation(new DefaultResourceLoader().getResource(configLocation));
@@ -61,5 +64,6 @@ public class MybatisConfig {
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
+
 
 }

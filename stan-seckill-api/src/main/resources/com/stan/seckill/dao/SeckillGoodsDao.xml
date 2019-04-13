@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stan.seckill.dao.SeckillGoodsDao">
+
+    
+    <select id="querySeckillGoods" resultType="seckillGoods">
+        select * from seckill_goods where id = #{goodsId}
+    </select>
+
+    <update id="updateSeckillGoodsStock">
+        update seckill_goods set goodsStock = goodsStock - #{seckillGoodsNumber}
+        where id = #{goodsId}
+    </update>
+
+</mapper>
