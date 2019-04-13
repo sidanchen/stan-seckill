@@ -12,5 +12,6 @@
  高并发安全
  测试：
  使用jmeter测试秒杀接口情况如下
+ 
  ![Image text](https://github.com/sidanchen/images/blob/master/seckill/test/seckill-test-1.jpg）
   
