@@ -15,3 +15,10 @@
  
  ![Image text](https://github.com/sidanchen/images/blob/master/seckill/test/seckill-test-1.jpg)
   
+## 2.0版本
+ 技术：springboot+mybatis+redis+rabbitmq
+ 2.0版本新加入redis缓存技术以及rabbitmq消息中间件
+ 使用redis做缓存减轻对高并发时对数据库的压力，将
+ 系统拆分为生产者以及消费者，生产者将用户秒杀订单业务
+ 入队，消费者消费队列中的订单业务，减轻单台服务器以及
+ 数据库的压力

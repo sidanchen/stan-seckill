@@ -21,14 +21,16 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <springboot-verson>1.5.6.RELEASE</springboot-verson>
-    <rabbitma-verson>1.5.10.RELEASE</rabbitma-verson>
-    <log4j-verson>1.5.6.RELEASE</log4j-verson>
+    <springboot-verson>2.0.4.RELEASE</springboot-verson>
+    <rabbitma-verson>2.1.3.RELEASE</rabbitma-verson>
     <druid-verson>1.1.0</druid-verson>
     <mysql-verson>5.1.45</mysql-verson>
     <mybatis-verson>1.3.2</mybatis-verson>
     <lombok-verson>1.16.20</lombok-verson>
     <fastjson-verson>1.2.43</fastjson-verson>
+    <redis-verson>2.0.0.RELEASE</redis-verson>
+    <jedis-verson>2.8.2</jedis-verson>
+    <test-verson>2.1.0.RELEASE</test-verson>
   </properties>
 
   <dependencyManagement>
@@ -54,18 +56,31 @@
           <version>${mybatis-verson}</version>
         </dependency>
 
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <version>${test-verson}</version>
+        </dependency>
+
+        <!--redis-->
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-redis</artifactId>
+          <version>${redis-verson}</version>
+        </dependency>
+
+        <!--jedis-->
+        <dependency>
+          <groupId>redis.clients</groupId>
+          <artifactId>jedis</artifactId>
+          <version>${jedis-verson}</version>
+        </dependency>
+
         <!--rabbitmq-->
         <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-amqp</artifactId>
           <version>${rabbitma-verson}</version>
-        </dependency>
-
-        <!--logutil-->
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-log4j2</artifactId>
-          <version>${log4j-verson}</version>
         </dependency>
 
         <!--data connection pool-->
