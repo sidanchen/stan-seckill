@@ -23,7 +23,7 @@ public class SeckillController {
     public String seckill(@PathVariable("goodsId") int goodsId) throws Exception{
         //使用时间模拟用户id
         Random random = new Random();
-        int userId = random.nextInt(1000);
+        int userId = random.nextInt(10000);
         return seckillGoodsService.seckillGoods(goodsId,userId);
     }
 }
