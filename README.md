@@ -22,3 +22,10 @@
  系统拆分为生产者以及消费者，生产者将用户秒杀订单业务
  入队，消费者消费队列中的订单业务，减轻单台服务器以及
  数据库的压力
+ 
+ 2.0系统流程图
+ ![Image text](https://github.com/sidanchen/images/blob/master/seckill/test/seckill-image-2.jpg)
+  
+ 2.0测试结果图
+ ![Image text](https://github.com/sidanchen/images/blob/master/seckill/test/seckill-test-2.jpg)
+ 
